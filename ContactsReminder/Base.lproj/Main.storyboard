@@ -14,7 +14,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="MYI-7R-KgQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="MYI-7R-KgQ" customClass="ListTableViewCell" customModule="ContactsReminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MYI-7R-KgQ" id="bXH-mQ-th7">
@@ -88,7 +88,7 @@
         <!--Add Reminder-->
         <scene sceneID="dhM-ff-iCh">
             <objects>
-                <viewController id="3K6-tE-xq1" sceneMemberID="viewController">
+                <viewController id="3K6-tE-xq1" customClass="AddReminderViewController" customModule="ContactsReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="loL-Ii-CNt"/>
                         <viewControllerLayoutGuide type="bottom" id="qVQ-fM-DSI"/>
@@ -173,7 +173,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="u0s-V6-qxL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="u0s-V6-qxL" customClass="ContactsTableViewCell" customModule="ContactsReminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u0s-V6-qxL" id="Uyx-qc-0Va">
@@ -228,7 +228,7 @@
             </objects>
             <point key="canvasLocation" x="1703.5" y="152.5"/>
         </scene>
-        <!--Add Contacts Table View Controller-->
+        <!--Add Contact-->
         <scene sceneID="NTh-yO-dSo">
             <objects>
                 <viewController id="ivx-NU-gZN" customClass="AddContactsTableViewController" customModule="ContactsReminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -351,6 +351,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Contact" id="Yv9-fE-Cwb">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ace-N6-LM0"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUD-m3-5Kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
