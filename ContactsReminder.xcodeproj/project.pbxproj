@@ -14,6 +14,12 @@
 		9934D2431BFF02C800121135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9934D2411BFF02C800121135 /* LaunchScreen.storyboard */; };
 		9934D24E1BFF02C800121135 /* ContactsReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D24D1BFF02C800121135 /* ContactsReminderTests.swift */; };
 		9934D2591BFF02C800121135 /* ContactsReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2581BFF02C800121135 /* ContactsReminderUITests.swift */; };
+		9934D2671BFF059100121135 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2661BFF059100121135 /* ListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9934D2691BFF1A3700121135 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2681BFF1A3700121135 /* AddReminderViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9934D26B1BFF1AAC00121135 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26A1BFF1AAC00121135 /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9934D26D1BFF2A0B00121135 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9934D26F1BFF2A2900121135 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9934D2711BFF2A6E00121135 /* AddContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		9934D2541BFF02C800121135 /* ContactsReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9934D2581BFF02C800121135 /* ContactsReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsReminderUITests.swift; sourceTree = "<group>"; };
 		9934D25A1BFF02C800121135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9934D2661BFF059100121135 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		9934D2681BFF1A3700121135 /* AddReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		9934D26A1BFF1AAC00121135 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,12 @@
 				9934D2381BFF02C700121135 /* AppDelegate.swift */,
 				9934D23A1BFF02C700121135 /* ViewController.swift */,
 				9934D23C1BFF02C800121135 /* Main.storyboard */,
+				9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */,
+				9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */,
+				9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */,
+				9934D26A1BFF1AAC00121135 /* ContactsTableViewController.swift */,
+				9934D2681BFF1A3700121135 /* AddReminderViewController.swift */,
+				9934D2661BFF059100121135 /* ListTableViewController.swift */,
 				9934D23F1BFF02C800121135 /* Assets.xcassets */,
 				9934D2411BFF02C800121135 /* LaunchScreen.storyboard */,
 				9934D2441BFF02C800121135 /* Info.plist */,
@@ -255,8 +273,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9934D26F1BFF2A2900121135 /* ContactsTableViewCell.swift in Sources */,
+				9934D2691BFF1A3700121135 /* AddReminderViewController.swift in Sources */,
+				9934D2671BFF059100121135 /* ListTableViewController.swift in Sources */,
+				9934D26B1BFF1AAC00121135 /* ContactsTableViewController.swift in Sources */,
 				9934D23B1BFF02C700121135 /* ViewController.swift in Sources */,
 				9934D2391BFF02C700121135 /* AppDelegate.swift in Sources */,
+				9934D2711BFF2A6E00121135 /* AddContactsTableViewController.swift in Sources */,
+				9934D26D1BFF2A0B00121135 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
