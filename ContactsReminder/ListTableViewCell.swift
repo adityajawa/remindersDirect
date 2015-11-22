@@ -10,6 +10,15 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var reminderLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var mailButton: UIButton!
+    @IBOutlet weak var cImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

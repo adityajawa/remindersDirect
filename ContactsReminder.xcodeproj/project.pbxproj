@@ -8,18 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9934D2391BFF02C700121135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2381BFF02C700121135 /* AppDelegate.swift */; };
-		9934D23B1BFF02C700121135 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D23A1BFF02C700121135 /* ViewController.swift */; };
 		9934D23E1BFF02C800121135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9934D23C1BFF02C800121135 /* Main.storyboard */; };
 		9934D2401BFF02C800121135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9934D23F1BFF02C800121135 /* Assets.xcassets */; };
 		9934D2431BFF02C800121135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9934D2411BFF02C800121135 /* LaunchScreen.storyboard */; };
 		9934D24E1BFF02C800121135 /* ContactsReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D24D1BFF02C800121135 /* ContactsReminderTests.swift */; };
 		9934D2591BFF02C800121135 /* ContactsReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2581BFF02C800121135 /* ContactsReminderUITests.swift */; };
-		9934D2671BFF059100121135 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2661BFF059100121135 /* ListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9934D2691BFF1A3700121135 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2681BFF1A3700121135 /* AddReminderViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9934D26B1BFF1AAC00121135 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26A1BFF1AAC00121135 /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9934D26D1BFF2A0B00121135 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9934D26F1BFF2A2900121135 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9934D2711BFF2A6E00121135 /* AddContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9934D2671BFF059100121135 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2661BFF059100121135 /* ListTableViewController.swift */; };
+		9934D2691BFF1A3700121135 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2681BFF1A3700121135 /* AddReminderViewController.swift */; };
+		9934D26B1BFF1AAC00121135 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26A1BFF1AAC00121135 /* ContactsTableViewController.swift */; };
+		9934D26D1BFF2A0B00121135 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */; };
+		9934D26F1BFF2A2900121135 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */; };
+		9934D2711BFF2A6E00121135 /* AddContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */; };
+		9934D2741BFF30E400121135 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2721BFF30E400121135 /* Contacts.xcdatamodeld */; };
+		9934D2761BFF310100121135 /* SwiftCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2751BFF310100121135 /* SwiftCoreDataHelper.swift */; };
+		9934D27B1BFF396A00121135 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2771BFF396A00121135 /* Contact+CoreDataProperties.swift */; };
+		9934D27C1BFF396A00121135 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2781BFF396A00121135 /* Contact.swift */; };
+		9934D27D1BFF396A00121135 /* ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D2791BFF396A00121135 /* ToDoItem+CoreDataProperties.swift */; };
+		9934D27E1BFF396A00121135 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934D27A1BFF396A00121135 /* ToDoItem.swift */; };
+		9934D2811C007C9300121135 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9934D2801C007C9300121135 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +48,6 @@
 /* Begin PBXFileReference section */
 		9934D2351BFF02C700121135 /* ContactsReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9934D2381BFF02C700121135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9934D23A1BFF02C700121135 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9934D23D1BFF02C800121135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9934D23F1BFF02C800121135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9934D2421BFF02C800121135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +64,13 @@
 		9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsTableViewController.swift; sourceTree = "<group>"; };
+		9934D2731BFF30E400121135 /* Contacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contacts.xcdatamodel; sourceTree = "<group>"; };
+		9934D2751BFF310100121135 /* SwiftCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCoreDataHelper.swift; sourceTree = "<group>"; };
+		9934D2771BFF396A00121135 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataProperties.swift"; path = "../Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9934D2781BFF396A00121135 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Contact.swift; sourceTree = "<group>"; };
+		9934D2791BFF396A00121135 /* ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ToDoItem+CoreDataProperties.swift"; path = "../ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9934D27A1BFF396A00121135 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoItem.swift; path = ../ToDoItem.swift; sourceTree = "<group>"; };
+		9934D2801C007C9300121135 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9934D2811C007C9300121135 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +102,7 @@
 		9934D22C1BFF02C700121135 = {
 			isa = PBXGroup;
 			children = (
+				9934D2801C007C9300121135 /* CoreData.framework */,
 				9934D2371BFF02C700121135 /* ContactsReminder */,
 				9934D24C1BFF02C800121135 /* ContactsReminderTests */,
 				9934D2571BFF02C800121135 /* ContactsReminderUITests */,
@@ -110,14 +124,15 @@
 			isa = PBXGroup;
 			children = (
 				9934D2381BFF02C700121135 /* AppDelegate.swift */,
-				9934D23A1BFF02C700121135 /* ViewController.swift */,
 				9934D23C1BFF02C800121135 /* Main.storyboard */,
 				9934D2701BFF2A6E00121135 /* AddContactsTableViewController.swift */,
-				9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */,
 				9934D26E1BFF2A2900121135 /* ContactsTableViewCell.swift */,
 				9934D26A1BFF1AAC00121135 /* ContactsTableViewController.swift */,
 				9934D2681BFF1A3700121135 /* AddReminderViewController.swift */,
+				9934D26C1BFF2A0B00121135 /* ListTableViewCell.swift */,
 				9934D2661BFF059100121135 /* ListTableViewController.swift */,
+				9934D2751BFF310100121135 /* SwiftCoreDataHelper.swift */,
+				9934D27F1BFF398900121135 /* Data Model */,
 				9934D23F1BFF02C800121135 /* Assets.xcassets */,
 				9934D2411BFF02C800121135 /* LaunchScreen.storyboard */,
 				9934D2441BFF02C800121135 /* Info.plist */,
@@ -141,6 +156,18 @@
 				9934D25A1BFF02C800121135 /* Info.plist */,
 			);
 			path = ContactsReminderUITests;
+			sourceTree = "<group>";
+		};
+		9934D27F1BFF398900121135 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				9934D2721BFF30E400121135 /* Contacts.xcdatamodeld */,
+				9934D2771BFF396A00121135 /* Contact+CoreDataProperties.swift */,
+				9934D2781BFF396A00121135 /* Contact.swift */,
+				9934D2791BFF396A00121135 /* ToDoItem+CoreDataProperties.swift */,
+				9934D27A1BFF396A00121135 /* ToDoItem.swift */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,14 +300,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9934D27C1BFF396A00121135 /* Contact.swift in Sources */,
 				9934D26F1BFF2A2900121135 /* ContactsTableViewCell.swift in Sources */,
+				9934D27E1BFF396A00121135 /* ToDoItem.swift in Sources */,
 				9934D2691BFF1A3700121135 /* AddReminderViewController.swift in Sources */,
+				9934D2761BFF310100121135 /* SwiftCoreDataHelper.swift in Sources */,
 				9934D2671BFF059100121135 /* ListTableViewController.swift in Sources */,
 				9934D26B1BFF1AAC00121135 /* ContactsTableViewController.swift in Sources */,
-				9934D23B1BFF02C700121135 /* ViewController.swift in Sources */,
+				9934D27B1BFF396A00121135 /* Contact+CoreDataProperties.swift in Sources */,
 				9934D2391BFF02C700121135 /* AppDelegate.swift in Sources */,
+				9934D27D1BFF396A00121135 /* ToDoItem+CoreDataProperties.swift in Sources */,
 				9934D2711BFF2A6E00121135 /* AddContactsTableViewController.swift in Sources */,
 				9934D26D1BFF2A0B00121135 /* ListTableViewCell.swift in Sources */,
+				9934D2741BFF30E400121135 /* Contacts.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContactsReminder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.focus.ContactsReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContactsReminder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.focus.ContactsReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +541,7 @@
 				9934D25F1BFF02C800121135 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9934D2601BFF02C800121135 /* Build configuration list for PBXNativeTarget "ContactsReminderTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +550,7 @@
 				9934D2621BFF02C800121135 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9934D2631BFF02C800121135 /* Build configuration list for PBXNativeTarget "ContactsReminderUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,8 +559,22 @@
 				9934D2651BFF02C800121135 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9934D2721BFF30E400121135 /* Contacts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9934D2731BFF30E400121135 /* Contacts.xcdatamodel */,
+			);
+			currentVersion = 9934D2731BFF30E400121135 /* Contacts.xcdatamodel */;
+			path = Contacts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9934D22D1BFF02C700121135 /* Project object */;
 }

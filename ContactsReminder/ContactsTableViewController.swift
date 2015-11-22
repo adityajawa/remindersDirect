@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import CoreData
+
+
+protocol ContactSelectionDelegate{
+    func userDidSelectContact(contactIdentifier:NSString)
+}
 
 class ContactsTableViewController: UITableViewController {
+    
+    var yourContact:NSMutableArray = NSMutableArray()
+    var delegate: ContactSelectionDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +27,35 @@ class ContactsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+       // print("checking")
+        loadData()
+    }
+    
+    func loadData() {
+        
+        yourContact.removeAllObjects()
+        
+        let moc: NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
+        
+        let results: NSArray = SwiftCoreDataHelper.fetchEntities("Contact", withPredicate: nil, managedObjectContext: moc)
+        
+        for singleContact in results {
+            let contact: Contact = singleContact as! Contact
+            let image = UIImage(data: contact.contactImage!)
+            let dict: NSDictionary = ["identifier": contact.identifier!,"firstName":contact.firstName!,"lastName":contact.lastName!,"email":contact.email!,"phoneNumber":contact.phoneNumber!,"contactImage":image!]
+            
+           // let cImage:UIImage = UIImage(data: contact.contactImage!)!
+          //  let newDict: NSDictionary = ["identifier": contact.identifier, "firstName": contact.firstName, "lastName": contact.lastName, "email":contact.email, "phoneNumber":contact.phoneNumber, "contactImage":cImage as! UIImage]
+            yourContact.addObject(dict )
+        }
+        
+        self.tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +67,53 @@ class ContactsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        //print(yourContact.count)
+        return yourContact.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath) as! ContactsTableViewCell
 
         // Configure the cell...
+        
+        let dictionary: NSDictionary = yourContact.objectAtIndex(indexPath.row) as! NSDictionary
+        
+        let firstName = dictionary["firstName"] as! String
+        let lastName = dictionary["lastName"] as! String
+        let email = dictionary["email"] as! String
+        let phoneNumber = dictionary["phoneNumber"] as! String
+        
+        cell.contactLabel.text = firstName + " " + lastName
+        cell.emailLabel.text = email
+        cell.phoneLabel.text = phoneNumber
+        
+        let contactImage = dictionary["contactImage"] as! UIImage
+        
+//        var contactImageFrame:CGRect = cell.contactImageView.frame
+//        contactImageFrame.size = CGSizeMake(75, 75)
+//        cell.contactImageView.frame = contactImageFrame
+        
+        cell.cImageView.image = contactImage
+        
 
         return cell
     }
-    */
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if delegate != nil {
+            let contactDict: NSDictionary = yourContact.objectAtIndex(indexPath.row) as! NSDictionary
+            delegate!.userDidSelectContact(contactDict["identifier"] as! NSString)
+            
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
-class AddContactsTableViewController: UITableViewController {
+class AddContactsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var firstNameTextField: UITextField! = UITextField()
+    @IBOutlet weak var lastNameTextField: UITextField! = UITextField()
+    @IBOutlet weak var emailTextField: UITextField! = UITextField()
+    @IBOutlet weak var phoneNumberTextField: UITextField! = UITextField()
+    @IBOutlet weak var contactImageView: UIImageView! = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +24,31 @@ class AddContactsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let tapRecognizer:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "selectImage:")
+        tapRecognizer.numberOfTapsRequired = 1
+        
+        contactImageView.addGestureRecognizer(tapRecognizer)
+        contactImageView.userInteractionEnabled = true
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "touched")
+        tap.numberOfTapsRequired = 1
+        tap.delegate = self
+        
+        self.tableView.addGestureRecognizer(tap)
+        
+    }
+    
+    func touched () {
+        print("touched")
+        self.view.endEditing(true)
+    }
+    
+    func selectImage(recognizer:UITapGestureRecognizer) {
+        let imagePicker:UIImagePickerController = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,15 +57,35 @@ class AddContactsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        
+        let pickedImage: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        let smallPicture: UIImage = scaleImageWith(pickedImage, newSize: CGSizeMake(100, 100))
+        
+        var sizeOfImageView: CGRect = contactImageView.frame
+        sizeOfImageView.size = smallPicture.size
+         contactImageView.frame = sizeOfImageView
+        
+        contactImageView.image = pickedImage//smallPicture
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+   
+    
+    func scaleImageWith(image:UIImage, newSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*
@@ -91,5 +142,23 @@ class AddContactsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func done(sender: AnyObject) {
+        
+        let moc: NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
+        let contact: Contact = SwiftCoreDataHelper.insertManagedObject(NSStringFromClass(Contact), managedObjectConect: moc) as! Contact
+        contact.identifier = "\(NSDate())"
+        contact.firstName = firstNameTextField.text
+        contact.lastName = lastNameTextField.text
+        contact.email = emailTextField.text
+        contact.phoneNumber = phoneNumberTextField.text
+        
+        let contactImage: NSData = UIImagePNGRepresentation(contactImageView.image!)!
+        
+        contact.contactImage = contactImage
+        
+        SwiftCoreDataHelper.saveManagedObjectContext(moc)
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }
